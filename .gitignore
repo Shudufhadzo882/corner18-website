@@ -1,0 +1,10 @@
+# Temporary / build artifacts
+extracted_logo.png
+extracted_logo_mask.png
+firebase-debug.log
+
+# Python scripts (not needed for the website)
+trace_logo.py
+
+# Node
+node_modules/
