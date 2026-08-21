@@ -8,3 +8,7 @@ trace_logo.py
 
 # Node
 node_modules/
+
+# Local source material (not needed for the website)
+new photos/
+Gemini_Generated_Image_*.jpg

@@ -22,10 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const slideMeta = [
     { label: 'Our Brick Yard • Mphaphuli, Thohoyandou' },
-    { label: 'Central Depot • Water Tank & Brick Stock' },
-    { label: 'Fresh Bricks Curing Under African Sun ☀️' },
-    { label: 'Brick-Pressing Machine in Full Operation' },
+    { label: 'Live From Our Central Depot' },
+    { label: 'High-Grade Concrete Bricks In Stock' },
+    { label: 'On-Site Operations At The Yard' },
+    { label: 'Building Materials Ready For Delivery' },
     { label: 'Lufule-Tshififi Road • Site Access Route' },
+    { label: 'Bricks & Bulk Water Delivered Daily' },
   ];
 
   function goToSlide(n) {
@@ -337,27 +339,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // =====================================================================
-  // FORM TOGGLE (Built-in vs Google Form)
-  // =====================================================================
-  const btnBuiltinForm       = document.getElementById('btnBuiltinForm');
-  const btnGoogleForm        = document.getElementById('btnGoogleForm');
-  const builtinFormContainer = document.getElementById('builtinFormContainer');
-  const googleFormContainer  = document.getElementById('googleFormContainer');
-
-  btnBuiltinForm?.addEventListener('click', () => {
-    btnBuiltinForm.classList.add('active');
-    btnGoogleForm?.classList.remove('active');
-    if (builtinFormContainer) builtinFormContainer.style.display = 'block';
-    if (googleFormContainer)  googleFormContainer.style.display  = 'none';
-  });
-  btnGoogleForm?.addEventListener('click', () => {
-    btnGoogleForm.classList.add('active');
-    btnBuiltinForm?.classList.remove('active');
-    if (googleFormContainer)  googleFormContainer.style.display  = 'block';
-    if (builtinFormContainer) builtinFormContainer.style.display = 'none';
-  });
-
-  // =====================================================================
   // QUOTE REQUEST FORM SUBMISSION
   // =====================================================================
   const quoteForm       = document.getElementById('quoteRequestForm');
@@ -383,5 +364,35 @@ document.addEventListener('DOMContentLoaded', () => {
     if (formSuccess) formSuccess.style.display  = 'block';
     window.open(waUrl, '_blank');
   });
+
+  // =====================================================================
+  // SCROLL-REVEAL ANIMATIONS
+  // =====================================================================
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const revealEls = document.querySelectorAll('.reveal');
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    revealEls.forEach(el => el.classList.add('visible'));
+  } else {
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => revealObserver.observe(el));
+  }
+
+  // =====================================================================
+  // FLOATING WHATSAPP BUTTON — show after scrolling past hero
+  // =====================================================================
+  const waFab        = document.getElementById('waFab');
+  const heroSection  = document.querySelector('.hero-slider');
+  if (waFab && heroSection) {
+    const toggleFab = () => waFab.classList.toggle('show', window.scrollY > heroSection.offsetHeight - 140);
+    window.addEventListener('scroll', toggleFab, { passive: true });
+    toggleFab();
+  }
 
 });

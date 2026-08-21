@@ -12,7 +12,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
 
@@ -81,33 +82,45 @@
       <img src="images/logo.svg" alt="Corner18 Logo">
     </div>
 
-    <!-- Slide 1: Bricks close-up field -->
+    <!-- Slide 1 -->
     <div class="slide active" id="slide-0">
-      <img src="images/slide2-bricks-top.jpg" alt="Corner18 concrete bricks laid out in rows at the Mphaphuli yard" loading="eager">
+      <img src="images/photo-1.jpg" alt="Corner18 brick yard at Mphaphuli, Thohoyandou" loading="eager">
       <div class="slide-overlay"></div>
     </div>
 
-    <!-- Slide 2: Wide yard with mango tree -->
+    <!-- Slide 2 -->
     <div class="slide" id="slide-1">
-      <img src="images/slide3-yard-tree.png" alt="Corner18 construction yard at Mphaphuli, Thohoyandou with bricks and water tank" loading="lazy">
+      <img src="images/photo-2.jpg" alt="Corner18 construction yard and stock at Mphaphuli, Thohoyandou" loading="lazy">
       <div class="slide-overlay"></div>
     </div>
 
-    <!-- Slide 3: Large field of fresh bricks -->
+    <!-- Slide 3 -->
     <div class="slide" id="slide-2">
-      <img src="images/slide5-bricks-field.png" alt="Freshly pressed concrete bricks curing on the Corner18 yard under African sun" loading="lazy">
+      <img src="images/photo-3.jpg" alt="Concrete bricks stocked at the Corner18 Mphaphuli depot" loading="lazy">
       <div class="slide-overlay"></div>
     </div>
 
-    <!-- Slide 4: Brick-making machine with worker -->
+    <!-- Slide 4 -->
     <div class="slide" id="slide-3">
-      <img src="images/slide4-machine.png" alt="Corner18 brick-pressing machine in operation at Mphaphuli yard" loading="lazy">
+      <img src="images/photo-4.jpg" alt="On-site operations at the Corner18 Mphaphuli yard" loading="lazy">
       <div class="slide-overlay"></div>
     </div>
 
-    <!-- Slide 5: Street view of construction site -->
+    <!-- Slide 5 -->
     <div class="slide" id="slide-4">
-      <img src="images/slide1-street.png" alt="Corner18 delivery site and street view, Lufule-Tshififi Road Thohoyandou" loading="lazy">
+      <img src="images/photo-5.jpg" alt="Corner18 building materials ready for delivery in Thohoyandou" loading="lazy">
+      <div class="slide-overlay"></div>
+    </div>
+
+    <!-- Slide 6 -->
+    <div class="slide" id="slide-5">
+      <img src="images/photo-6.jpg" alt="Corner18 site capture along Lufule-Tshififi Road, Thohoyandou" loading="lazy">
+      <div class="slide-overlay"></div>
+    </div>
+
+    <!-- Slide 7 -->
+    <div class="slide" id="slide-6">
+      <img src="images/photo-7.jpg" alt="Latest Corner18 yard and delivery photo, Thohoyandou" loading="lazy">
       <div class="slide-overlay"></div>
     </div>
 
@@ -118,7 +131,7 @@
           <span class="pulse-dot"></span>
           <span id="slideLabel">Premier Construction Supplier in Thohoyandou</span>
         </div>
-        <h1 class="hero-title">Corner18 General Construction</h1>
+        <h1 class="hero-title"><span class="grad-text">Corner18</span> General Construction</h1>
         <p class="hero-subtitle">
           Quality Building Bricks &amp; Reliable Bulk Water Supply in Thohoyandou &amp; Surrounding Vhembe Areas
         </p>
@@ -163,35 +176,44 @@
       <button class="dot" data-slide="2" aria-label="Slide 3"></button>
       <button class="dot" data-slide="3" aria-label="Slide 4"></button>
       <button class="dot" data-slide="4" aria-label="Slide 5"></button>
+      <button class="dot" data-slide="5" aria-label="Slide 6"></button>
+      <button class="dot" data-slide="6" aria-label="Slide 7"></button>
     </div>
 
     <!-- Thumbnail Strip -->
     <div class="slide-thumb-bar" aria-hidden="true">
-      <div class="slide-thumb active" data-slide="0"><img src="images/slide2-bricks-top.jpg" alt=""></div>
-      <div class="slide-thumb" data-slide="1"><img src="images/slide3-yard-tree.png" alt=""></div>
-      <div class="slide-thumb" data-slide="2"><img src="images/slide5-bricks-field.png" alt=""></div>
-      <div class="slide-thumb" data-slide="3"><img src="images/slide4-machine.png" alt=""></div>
-      <div class="slide-thumb" data-slide="4"><img src="images/slide1-street.png" alt=""></div>
+      <div class="slide-thumb active" data-slide="0"><img src="images/photo-1.jpg" alt=""></div>
+      <div class="slide-thumb" data-slide="1"><img src="images/photo-2.jpg" alt=""></div>
+      <div class="slide-thumb" data-slide="2"><img src="images/photo-3.jpg" alt=""></div>
+      <div class="slide-thumb" data-slide="3"><img src="images/photo-4.jpg" alt=""></div>
+      <div class="slide-thumb" data-slide="4"><img src="images/photo-5.jpg" alt=""></div>
+      <div class="slide-thumb" data-slide="5"><img src="images/photo-6.jpg" alt=""></div>
+      <div class="slide-thumb" data-slide="6"><img src="images/photo-7.jpg" alt=""></div>
     </div>
 
     <!-- Auto-play progress bar -->
     <div class="slide-progress" id="slideProgress"></div>
+
+    <!-- Scroll cue -->
+    <a href="#services" class="scroll-cue" aria-label="Scroll down to services">
+      <span class="wheel"></span>
+    </a>
 
   </section>
 
   <!-- Section 2: Services & Pricing -->
   <section class="section services-section logo-watermark" id="services">
     <div class="container">
-      <div class="section-header text-center">
+      <div class="section-header text-center reveal">
         <h2 class="section-title">Our Products & Services</h2>
         <p class="section-subtitle">Durable concrete bricks and clean bulk water delivered straight to your building site or residential property.</p>
       </div>
 
       <div class="services-grid">
         <!-- Column 1: Building Bricks -->
-        <div class="service-card">
+        <div class="service-card reveal">
           <div class="card-image-wrap">
-            <img src="images/slide2-bricks-top.jpg" 
+            <img src="images/photo-1.jpg" 
                  alt="Quality Building Bricks Stack - Corner18 Thohoyandou" 
                  class="card-img">
             <div class="card-img-overlay"></div>
@@ -239,7 +261,7 @@
         </div>
 
         <!-- Column 2: Bulk Clean Water Delivery -->
-        <div class="service-card">
+        <div class="service-card reveal">
           <div class="card-image-wrap">
             <img src="https://th.bing.com/th/id/OIP.TYQmMYR0Wb_QDIkFRSse7AHaFl?r=0&o=7&rm=3&rs=1&pid=ImgDetMain" 
                  alt="Bulk Water Tanker Truck - Corner18 Thohoyandou Delivery" 
@@ -288,7 +310,7 @@
   <!-- Section 3: Transport & Delivery Callout Box -->
   <section class="callout-section logo-watermark">
     <div class="container">
-      <div class="callout-box">
+      <div class="callout-box reveal">
         <div class="callout-icon">
           🚚
         </div>
@@ -308,15 +330,15 @@
   <!-- NEW Section: Live Yard & Street Scenery Gallery -->
   <section class="section gallery-section logo-watermark" id="yard-gallery">
     <div class="container">
-      <div class="section-header text-center">
+      <div class="section-header text-center reveal">
         <span class="section-tag">Live Location Captures</span>
         <h2 class="section-title">Mphaphuli Yard & Site Deliveries</h2>
         <p class="section-subtitle">Real captures from our central depot along Lufule-Tshififi Road and active building site deliveries in Thohoyandou.</p>
       </div>
 
       <div class="gallery-grid">
-        <div class="gallery-card">
-          <img src="images/slide5-bricks-field.png" 
+        <div class="gallery-card reveal">
+          <img src="images/photo-3.jpg" 
                alt="Concrete Bricks Depot Mphaphuli" 
                class="gallery-img">
           <div class="gallery-info">
@@ -326,7 +348,7 @@
           </div>
         </div>
 
-        <div class="gallery-card">
+        <div class="gallery-card reveal">
           <img src="https://th.bing.com/th/id/OIP.TYQmMYR0Wb_QDIkFRSse7AHaFl?r=0&o=7&rm=3&rs=1&pid=ImgDetMain" 
                alt="Bulk Clean Water Delivery Truck" 
                class="gallery-img"
@@ -339,8 +361,8 @@
           </div>
         </div>
 
-        <div class="gallery-card">
-          <img src="images/slide1-street.png" 
+        <div class="gallery-card reveal">
+          <img src="images/photo-6.jpg" 
                alt="Lufule-Tshififi Road Access Thohoyandou" 
                class="gallery-img">
           <div class="gallery-info">
@@ -350,9 +372,9 @@
           </div>
         </div>
 
-        <div class="gallery-card">
-          <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=800&q=80" 
-               alt="Residential House Construction Thohoyandou" 
+        <div class="gallery-card reveal">
+          <img src="images/photo-4.jpg"
+               alt="Corner18 Bricks Delivered To Building Site Thohoyandou"
                class="gallery-img">
           <div class="gallery-info">
             <span class="gallery-tag">On-Site Delivery</span>
@@ -367,13 +389,13 @@
   <!-- Interactive Price Calculator Section (Value Add) -->
   <section class="section calculator-section logo-watermark" id="calculator">
     <div class="container">
-      <div class="section-header text-center">
+      <div class="section-header text-center reveal">
         <span class="section-tag">Interactive Tool</span>
         <h2 class="section-title">Instant Order Price Estimator</h2>
         <p class="section-subtitle">Select your required bricks or water volume to get an instant cost estimate including transport to your area.</p>
       </div>
 
-      <div class="calc-card glass-panel">
+      <div class="calc-card glass-panel reveal">
         <div class="calc-grid">
           <div class="calc-form-side">
             <div class="form-group">
@@ -447,7 +469,7 @@
               <hr class="summary-hr">
               <div class="summary-row total-row">
                 <span>Estimated Total:</span>
-                <strong id="calcGrandTotal" class="total-amount">R2,000.00</strong>
+                <strong id="calcGrandTotal" class="total-amount">R2,600.00</strong>
               </div>
 
               <p class="calc-disclaimer">
@@ -468,13 +490,13 @@
   <!-- Section 4: Order / Delivery Quote Request Form -->
   <section class="section form-section logo-watermark" id="quote-form">
     <div class="container">
-      <div class="section-header text-center">
+      <div class="section-header text-center reveal">
         <h2 class="section-title">Corner18 Order & Quote Request</h2>
         <p class="section-subtitle">Need a formal quote or callback? Fill in your delivery details below and our team will get right back to you.</p>
       </div>
 
       <!-- Built-in Interactive Form -->
-      <div id="builtinFormContainer" class="form-card glass-panel">
+      <div id="builtinFormContainer" class="form-card glass-panel reveal">
         <form id="quoteRequestForm" class="quote-form">
           <div class="form-grid">
             <div class="form-group">
@@ -538,12 +560,12 @@
   <!-- Section 5: Business Location & Interactive Map -->
   <section class="section location-section logo-watermark" id="location">
     <div class="container">
-      <div class="section-header text-center">
+      <div class="section-header text-center reveal">
         <h2 class="section-title">Visit Our Yard & Location</h2>
         <p class="section-subtitle">Based in Mphaphuli, Thohoyandou. Visit us or get directions straight to our brickyard and water depot.</p>
       </div>
 
-      <div class="location-grid glass-panel">
+      <div class="location-grid glass-panel reveal">
         <div class="location-info">
           <div class="info-card-header">
             <span class="loc-badge">Central Depot</span>
@@ -556,6 +578,27 @@
               <div class="detail-text">
                 <strong>Address:</strong>
                 <p>Lufule-Tshififi Road, Mphaphuli, Thohoyandou, 0970</p>
+              </div>
+            </li>
+            <li>
+              <div class="detail-icon">🏢</div>
+              <div class="detail-text">
+                <strong>Registered Office:</strong>
+                <p>15498 Cape Date, Kliptontein, Soshanguve, 0152</p>
+              </div>
+            </li>
+            <li>
+              <div class="detail-icon">📧</div>
+              <div class="detail-text">
+                <strong>Email:</strong>
+                <p><a href="mailto:hulisani1983@gmail.com">hulisani1983@gmail.com</a></p>
+              </div>
+            </li>
+            <li>
+              <div class="detail-icon">📋</div>
+              <div class="detail-text">
+                <strong>Registration No:</strong>
+                <p>2021/894589/07</p>
               </div>
             </li>
             <li>
@@ -658,15 +701,19 @@
           <div class="footer-contact">
             <p><strong>WhatsApp Line:</strong><br><a href="https://wa.me/27768191591" target="_blank" rel="noopener noreferrer" class="footerPhoneVal">076 819 1591</a></p>
             <p><strong>Direct Calls / Landline:</strong><br><a href="tel:0723136794">072 313 6794</a></p>
-            <p><strong>Address:</strong><br>Lufule-Tshififi Road, Mphaphuli, Thohoyandou, 0970</p>
+            <p><strong>Email:</strong><br><a href="mailto:hulisani1983@gmail.com">hulisani1983@gmail.com</a></p>
+            <p><strong>Yard Address:</strong><br>Lufule-Tshififi Road, Mphaphuli, Thohoyandou, 0970</p>
+            <p><strong>Registered Office:</strong><br>15498 Cape Date, Kliptontein, Soshanguve, 0152</p>
             <p><strong>Hours:</strong><br>Mon - Sat: 07:30 - 17:00</p>
+            <p><strong>Reg No:</strong> 2021/894589/07</p>
           </div>
         </div>
       </div>
 
       <div class="footer-bottom">
         <div class="footer-copyright">
-          © 2026 <strong>Corner18 General Construction</strong>. All Rights Reserved.
+          © 2026 <strong>Corner18 General Construction</strong>. All Rights Reserved.<br>
+          <span class="text-muted">Reg No. 2021/894589/07</span>
         </div>
       </div>
     </div>
@@ -690,6 +737,12 @@
     </div>
   </div>
 
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=3"></script>
+
+  <!-- Floating WhatsApp Button (appears after scrolling past hero) -->
+  <a href="https://wa.me/27768191591?text=Hi%20Corner18,%20I%20would%20like%20to%20inquire%20about%20bricks/water"
+     id="waFab" class="wa-fab" target="_blank" rel="noopener noreferrer" aria-label="Chat with Corner18 on WhatsApp">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.099 4.019 4.019-1.099z"/></svg>
+  </a>
 </body>
 </html>
