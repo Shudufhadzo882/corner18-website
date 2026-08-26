@@ -233,14 +233,22 @@ document.addEventListener('DOMContentLoaded', () => {
       sQty = parseInt(calcSmallQty?.value) || 0;
       lQty = parseInt(calcLargeQty?.value) || 0;
       itemsTotal = (sQty * 2.00) + (lQty * 4.00);
+    } else if (svc === 'water_2500') {
+      if (smallQtyGroup) smallQtyGroup.style.display = 'none';
+      if (largeQtyGroup) largeQtyGroup.style.display = 'none';
+      itemsTotal = 500.00;
     } else if (svc === 'water_5000') {
       if (smallQtyGroup) smallQtyGroup.style.display = 'none';
       if (largeQtyGroup) largeQtyGroup.style.display = 'none';
-      itemsTotal = 650.00;
-    } else if (svc === 'water_10000') {
+      itemsTotal = 900.00;
+    } else if (svc === 'sand_bou') {
       if (smallQtyGroup) smallQtyGroup.style.display = 'none';
       if (largeQtyGroup) largeQtyGroup.style.display = 'none';
-      itemsTotal = 1200.00;
+      itemsTotal = 900.00;
+    } else if (svc === 'sand_river') {
+      if (smallQtyGroup) smallQtyGroup.style.display = 'none';
+      if (largeQtyGroup) largeQtyGroup.style.display = 'none';
+      itemsTotal = 900.00;
     }
 
     const isDelivery = calcDeliveryOption ? calcDeliveryOption.value === 'delivery' : true;
@@ -266,7 +274,11 @@ document.addEventListener('DOMContentLoaded', () => {
         currentLoadsCount = Math.ceil(loadRatio);
         transportFee = currentLoadsCount * 600;
       } else if (svc.startsWith('water_')) {
-        // Water includes tanker transport locally
+        // Water includes free local tanker transport
+        currentLoadsCount = 1;
+        transportFee = 0;
+      } else if (svc.startsWith('sand_')) {
+        // Sand includes free local transport
         currentLoadsCount = 1;
         transportFee = 0;
       }
@@ -279,7 +291,9 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!isDelivery) {
         calcTransportLabel.textContent = 'Transport (Self-Collection):';
       } else if (svc.startsWith('water_')) {
-        calcTransportLabel.textContent = 'Tanker Transport:';
+        calcTransportLabel.textContent = 'Local Delivery:';
+      } else if (svc.startsWith('sand_')) {
+        calcTransportLabel.textContent = 'Local Delivery:';
       } else {
         calcTransportLabel.textContent = `Transport Fee (${currentLoadsCount} Load${currentLoadsCount !== 1 ? 's' : ''}):`;
       }
@@ -288,7 +302,9 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!isDelivery) {
         calcTransportFee.textContent = 'R0.00 (Own Pick-up)';
       } else if (svc.startsWith('water_')) {
-        calcTransportFee.textContent = 'Included locally';
+        calcTransportFee.textContent = 'FREE ✅';
+      } else if (svc.startsWith('sand_')) {
+        calcTransportFee.textContent = 'FREE ✅';
       } else {
         calcTransportFee.textContent = fmt(transportFee);
       }
@@ -318,7 +334,13 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (isDelivery) {
       msg += `• Delivery Option: Site Delivery (${locName})\n`;
-      msg += `• Transport Fee: ${transportTxt} (R600/1k Large, R600/2k Small)\n`;
+      if (svc.startsWith('water_')) {
+        msg += `• Delivery Fee: FREE Local Delivery\n`;
+      } else if (svc.startsWith('sand_')) {
+        msg += `• Delivery Fee: FREE Local Delivery\n`;
+      } else {
+        msg += `• Transport Fee: ${transportTxt} (R600/1k Large, R600/2k Small)\n`;
+      }
     } else {
       msg += `• Delivery Option: Customer Self-Collection at Yard (R0 Transport)\n`;
     }

@@ -364,6 +364,13 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .btn-water:hover { transform: translateY(-2px); }
 
+.btn-sand {
+  background: linear-gradient(135deg, #c8a84e, #8b6914);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(200, 168, 78, 0.28);
+}
+.btn-sand:hover { transform: translateY(-2px); }
+
 /* =====================================================================
    HERO SLIDER
    ===================================================================== */
@@ -699,6 +706,10 @@ img { max-width: 100%; height: auto; display: block; }
   z-index: 2;
 }
 .water-badge { background: var(--sky-blue); }
+.sand-overlay {
+  background: linear-gradient(180deg, rgba(200,168,78,0.15) 0%, rgba(139,105,20,0.55) 100%);
+}
+.sand-badge { background: #c8a84e; }
 .card-img-title {
   position: absolute;
   bottom: 0.85rem; left: 1rem;
@@ -735,6 +746,7 @@ img { max-width: 100%; height: auto; display: block; }
 .tier-sub { font-size: 0.75rem; color: var(--text-muted); display: block; }
 .tier-price { font-family: var(--font-heading); font-weight: 800; font-size: 1.3rem; color: var(--primary-orange); }
 .water-pricing .tier-price { color: var(--sky-blue); }
+.sand-pricing .tier-price { color: #8b6914; }
 .unit { font-size: 0.72rem; color: var(--text-secondary); font-weight: 400; }
 
 .feature-list { margin-bottom: 1.25rem; display: flex; flex-direction: column; gap: 0.45rem; font-size: 0.88rem; color: var(--text-secondary); }
@@ -748,6 +760,7 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--text-primary);
 }
 .water-delivery-tag { background: var(--sky-blue-light); border-left-color: var(--sky-blue); }
+.sand-delivery-tag { background: rgba(200,168,78,0.12); border-left-color: #c8a84e; }
 
 /* =====================================================================
    CALLOUT BOX
@@ -1172,7 +1185,8 @@ img { max-width: 100%; height: auto; display: block; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 .gallery-grid .gallery-card:nth-child(2),
 .services-grid .service-card:nth-child(2) { transition-delay: 0.12s; }
-.gallery-grid .gallery-card:nth-child(3) { transition-delay: 0.24s; }
+.gallery-grid .gallery-card:nth-child(3),
+.services-grid .service-card:nth-child(3) { transition-delay: 0.24s; }
 .gallery-grid .gallery-card:nth-child(4) { transition-delay: 0.36s; }
 
 /* Reduced motion: show everything instantly */
