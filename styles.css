@@ -1269,3 +1269,106 @@ img { max-width: 100%; height: auto; display: block; }
 @media (max-width: 768px) {
   .wa-fab { width: 56px; height: 56px; }
 }
+
+/* =====================================================================
+   SAND CARD MINI SLIDESHOW (bakkie.jpeg & bakkie2.jpeg)
+   ===================================================================== */
+.sand-image-wrap {
+  position: relative;
+  overflow: hidden;
+  height: 220px; /* matches .card-image-wrap height */
+}
+
+/* Each slide fills the card image area absolutely */
+.sand-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+/* Slide 1 starts visible */
+.sand-slide-1 {
+  animation: sandFade1 8s infinite ease-in-out;
+  z-index: 1;
+}
+/* Slide 2 starts hidden, fades in after slide 1 */
+.sand-slide-2 {
+  animation: sandFade2 8s infinite ease-in-out;
+  z-index: 1;
+}
+
+.sand-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Keyframes: 0-45% show, 50-55% transition, 55-100% hide */
+@keyframes sandFade1 {
+  0%    { opacity: 1; z-index: 2; }
+  40%   { opacity: 1; z-index: 2; }
+  50%   { opacity: 0; z-index: 1; }
+  100%  { opacity: 0; z-index: 1; }
+}
+@keyframes sandFade2 {
+  0%    { opacity: 0; z-index: 1; }
+  40%   { opacity: 0; z-index: 1; }
+  50%   { opacity: 1; z-index: 2; }
+  90%   { opacity: 1; z-index: 2; }
+  100%  { opacity: 0; z-index: 1; }
+}
+
+/* The overlay and badge must sit above slides */
+.sand-image-wrap .card-img-overlay,
+.sand-image-wrap .card-badge,
+.sand-image-wrap .card-img-title,
+.sand-image-wrap .sand-slide-dots {
+  z-index: 10;
+}
+
+/* Slide indicator dots */
+.sand-slide-dots {
+  position: absolute;
+  bottom: 0.6rem;
+  right: 0.75rem;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.sand-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  transition: background 0.4s ease;
+  display: inline-block;
+}
+/* Dot 1 active during slide 1 (0-50%), dot 2 active during slide 2 (50-100%) */
+.sand-dot-1 { animation: dotActive1 8s infinite ease-in-out; }
+.sand-dot-2 { animation: dotActive2 8s infinite ease-in-out; }
+
+@keyframes dotActive1 {
+  0%   { background: #fff; width: 18px; border-radius: 4px; }
+  45%  { background: #fff; width: 18px; border-radius: 4px; }
+  55%  { background: rgba(255,255,255,0.4); width: 7px; border-radius: 50%; }
+  100% { background: rgba(255,255,255,0.4); width: 7px; border-radius: 50%; }
+}
+@keyframes dotActive2 {
+  0%   { background: rgba(255,255,255,0.4); width: 7px; border-radius: 50%; }
+  45%  { background: rgba(255,255,255,0.4); width: 7px; border-radius: 50%; }
+  55%  { background: #fff; width: 18px; border-radius: 4px; }
+  95%  { background: #fff; width: 18px; border-radius: 4px; }
+  100% { background: rgba(255,255,255,0.4); width: 7px; border-radius: 50%; }
+}
+
+/* Hover: pause animation */
+.sand-image-wrap:hover .sand-slide-1,
+.sand-image-wrap:hover .sand-slide-2 {
+  animation-play-state: paused;
+}
+.sand-image-wrap:hover .sand-dot-1,
+.sand-image-wrap:hover .sand-dot-2 {
+  animation-play-state: paused;
+}
